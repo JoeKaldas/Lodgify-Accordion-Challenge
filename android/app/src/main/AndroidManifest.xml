@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.flutter">
+    package="com.lodgify">
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:label="Flutter"
+        android:label="Lodgify"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true">
            

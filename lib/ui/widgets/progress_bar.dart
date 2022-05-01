@@ -42,12 +42,11 @@ class ProgressBar extends GetView<TasksController> {
               duration: const Duration(milliseconds: 500),
               top: 0,
               bottom: 0,
-              left:
-                  (controller.progressValue * controller.containerWidth / 100) -
-                      50,
+              width: controller.progressTextWidth,
               child: Container(
-                padding: const EdgeInsets.only(left: 5),
-                alignment: Alignment.center,
+                padding: EdgeInsets.symmetric(
+                    horizontal: controller.progressTextWidth * 0.08),
+                alignment: Alignment.centerRight,
                 child: Obx(
                   () => Text(
                     '${controller.progressValue}%',

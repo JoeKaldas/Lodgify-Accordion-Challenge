@@ -26,6 +26,14 @@ class TasksController extends GetxController {
     return Get.width - 80 - 40 - leftMargin - 2;
   }
 
+  double get progressTextWidth {
+    double width = progressValue * containerWidth / 100.0;
+    if (width < 20) {
+      width = 20;
+    }
+    return width;
+  }
+
   int get tasksSum {
     // Map by task value, flatten list and sum
     return tasksGroups

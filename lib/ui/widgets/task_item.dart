@@ -15,12 +15,14 @@ class TaskItem extends GetView<TasksController> {
 
   @override
   Widget build(BuildContext context) {
+    // Tile with checkbox + text
     return Obx(
       () => CheckboxListTile(
         checkColor: kColorWhite,
         activeColor: kColorGreen,
         controlAffinity: ListTileControlAffinity.leading,
         value: controller.tasksGroups[taskGroupIndex].tasks[taskIndex].checked,
+        // Toggle checkbox selection
         onChanged: (value) {
           controller.toggleTask(taskGroupIndex, taskIndex, value);
         },

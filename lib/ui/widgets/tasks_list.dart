@@ -13,18 +13,22 @@ class TasksList extends GetView<TasksController> {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: containerRadius,
+      // Expansion Panel for the task groups
       child: Obx(
         () => ExpansionPanelList(
+          // Toggling task group expansion
           expansionCallback: (int index, bool isExpanded) {
             controller.toggleTaskGroup(index, isExpanded);
           },
           children: [
+            // Looping on task groups
             for (var taskGroupIndex = 0;
                 taskGroupIndex < controller.tasksGroups.length;
                 taskGroupIndex++)
               ExpansionPanel(
                 isExpanded: controller.tasksGroups[taskGroupIndex].isExpanded,
                 headerBuilder: (context, isExpanded) => ListTile(
+                  // Icon showing task group status
                   leading: Icon(
                     controller.tasksGroups[taskGroupIndex].allTasksChecked
                         ? Icons.assignment_turned_in_outlined
@@ -34,6 +38,7 @@ class TasksList extends GetView<TasksController> {
                             ? kColorGreen
                             : kColorLightGrey,
                   ),
+                  // Task group name
                   title: Text(
                     controller.tasksGroups[taskGroupIndex].name,
                     style: TextStyle(
@@ -43,6 +48,7 @@ class TasksList extends GetView<TasksController> {
                               : kColorBlack,
                     ),
                   ),
+                  // Task group actions
                   trailing: Text(
                     controller.tasksGroups[taskGroupIndex].isExpanded
                         ? 'Hide'

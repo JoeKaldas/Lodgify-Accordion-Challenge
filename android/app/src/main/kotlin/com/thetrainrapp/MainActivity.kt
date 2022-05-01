@@ -1,4 +1,4 @@
-package com.flutter
+package com.lodgify
 
 import io.flutter.embedding.android.FlutterActivity
 

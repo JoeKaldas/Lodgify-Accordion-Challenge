@@ -44,8 +44,9 @@ class ProgressBar extends GetView<TasksController> {
               bottom: 0,
               width: controller.progressTextWidth,
               child: Container(
-                padding: EdgeInsets.symmetric(
-                    horizontal: controller.progressTextWidth * 0.08),
+                padding: const EdgeInsets.only(
+                  right: 5,
+                ),
                 alignment: Alignment.centerRight,
                 child: Obx(
                   () => Text(

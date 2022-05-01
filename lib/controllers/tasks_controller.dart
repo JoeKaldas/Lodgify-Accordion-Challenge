@@ -21,15 +21,15 @@ class TasksController extends GetxController {
   }
 
   double get containerWidth {
-    // Screen size - 80 screen padding - 40 screen margin - 40/0 according to screen size - 2 progress border
+    // Screen size - 40 screen padding - 40 screen margin - 40/0 according to screen size - 2 progress border
     final double leftMargin = GetPlatform.isDesktop ? 40 : 0;
-    return Get.width - 80 - 40 - leftMargin - 2;
+    return Get.width - 40 - 40 - leftMargin - 2;
   }
 
   double get progressTextWidth {
     double width = progressValue * containerWidth / 100.0;
-    if (width < 20) {
-      width = 20;
+    if (width < 30) {
+      width = 30;
     }
     return width;
   }

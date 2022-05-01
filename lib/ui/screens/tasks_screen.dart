@@ -30,7 +30,7 @@ class Body extends GetView<TasksController> {
         child: Container(
           width: Get.width,
           padding: screenSpacing,
-          margin: const EdgeInsets.all(40),
+          margin: const EdgeInsets.all(20),
           decoration: BoxDecoration(
             border: Border.all(
               color: Colors.grey,
